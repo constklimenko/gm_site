@@ -1,2 +1,4 @@
 
 .idea/
+venv/
+/gm_site/api/migrations/

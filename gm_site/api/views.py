@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Artist, Genre, Painting, Place, Event, Article, Comment
+from .models import Artist, Genre, Painting, Place, Event, Article, Comment, Main
 from .serializers import ArtistSerializer, GenreSerializer, PaintingSerializer, PlaceSerializer, \
-    EventSerializer, ArticleSerializer, CommentSerializer
+    EventSerializer, ArticleSerializer, CommentSerializer, MainSerializer
 
 
 class ApiArtistViewSet(ModelViewSet):
@@ -31,8 +31,13 @@ class ApiEventViewSet(ModelViewSet):
 
 
 class ApiArticleViewSet(ModelViewSet):
-    queryset = Article.objects.filter(for_main=False)
+    queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+
+
+class ApiMainViewSet(ModelViewSet):
+    queryset = Main.objects.all()
+    serializer_class = MainSerializer
 
 
 class ApiCommentViewSet(ModelViewSet):

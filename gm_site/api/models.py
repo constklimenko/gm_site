@@ -99,7 +99,6 @@ class Event(models.Model):
 class Article(models.Model):
     """Класс Статья. Может иметь привязку к Событиям, Площадкам, Художникам, Картинам.
     TODO: подключить движок тегов."""
-    for_main = models.BooleanField(default=False)  # Статья не для блога, а для главной страницы.
     title = models.CharField(max_length=250)
     places = models.ManyToManyField(Place, blank=True)
     paintings = models.ManyToManyField(Painting, blank=True)
@@ -116,6 +115,20 @@ class Article(models.Model):
         verbose_name_plural = "Статьи"
 
 
+class Main(models.Model):
+    """Класс 'Главная'. Используется для заполнения контентом главной страницы.
+    TODO: сделать реализацию синглтоном, либо придумать как подругому хранить контент на главной."""
+    title_about = models.CharField(max_length=250)
+    content_about = models.TextField(null=True)
+
+    def __str__(self):
+        return self.title_about
+
+    class Meta:
+        verbose_name = "Главная"
+        verbose_name_plural = "Главная"
+
+
 class Comment(models.Model):
     """Класс Комментарий. Привязывается к статье и к родительскому комментарию, если есть.
     TODO: Переработать с учетом аутентификации через соцсети."""
@@ -127,7 +140,7 @@ class Comment(models.Model):
     datetime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.article.name} - комментарий №{self.pk}"
+        return f"{self.article.title} - комментарий №{self.pk}"
 
     class Meta:
         verbose_name = "Комментарий"

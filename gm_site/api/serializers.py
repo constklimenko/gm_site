@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Artist, Genre, Painting, Place, Event, Article, Comment
+from .models import Artist, Genre, Painting, Place, Event, Article, Comment, Main
 
 
 class ArtistSerializer(serializers.ModelSerializer):
@@ -36,6 +36,12 @@ class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('title', 'places', 'paintings', 'artists', 'events', 'datetime', 'content')
+
+
+class MainSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Main
+        fields = ('title_about', 'content_about')
 
 
 class CommentSerializer(serializers.ModelSerializer):

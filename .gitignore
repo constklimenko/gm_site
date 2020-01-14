@@ -2,3 +2,7 @@
 .idea/
 venv/
 /gm_site/api/migrations/
+
+gm_site/api/__pycache__/
+
+gm_site/gm_site/__pycache__/

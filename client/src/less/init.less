@@ -1,0 +1,27 @@
+@import "parts/params";
+// @import (reference) "parts/bootstrap";
+@import "parts/mixins";
+
+.nav{
+  background-color: @darkest;
+  .size-full();
+  &__row{
+    .size-full();
+  .flex-row;
+  .font-xs-600;
+  .padding-h(2em,2em);
+  align-content   : center;
+  align-items     : center;
+  justify-content : space-around;
+  position        : sticky;
+  top             : 0;
+  z-index         : 20;
+  background-color: @darkest;
+  @media (max-width: @size-mobile) {
+    .font-xxs-600;
+  }
+    &__link{
+      
+    }
+  }
+}

@@ -15,7 +15,7 @@ var config = {
     },
     output: {
         cssName: 'index.css',
-        path: 'static/css',
+        path: '../gm_site/static/css',
         path_file: 'land3/public/l3-index.html',
         path_file_css: 'static/css/index.css',
 

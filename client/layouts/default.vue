@@ -1,6 +1,6 @@
 <template>
   <div>
-    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/index.css" />
     <navi />
     <nuxt />
   </div>

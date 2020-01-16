@@ -21,6 +21,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
+    "gulp": "^4.0.2",
     "less": "^3.10.3",
     "less-loader": "^5.0.0"
   }

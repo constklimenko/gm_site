@@ -1,5 +1,6 @@
 <template>
   <div class="blog">
+    
     <articleBlock
       v-for="(addr, index) in articleAddrs"
       v-bind:key="addr.id"

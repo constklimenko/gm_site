@@ -144,7 +144,7 @@ sup {
 a {
   color                       : @yellow;
   text-decoration             : none;
-  background-color            : transparent;
+  // background-color            : transparent;
   -webkit-text-decoration-skip: objects;
 }
 
@@ -170,11 +170,67 @@ a:not([href]):not([tabindex]):focus {
 
 // end of bs styles
 
+
+
+
 .clear() {
   padding   : 0;
   margin    : 0;
   box-sizing: border-box;
 }
+
+// grad-move animation
+
+@-webkit-keyframes gradMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes gradMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes gradMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes gradMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes charSlider {
+  from {
+      top: -4.5em;
+  }
+  to {
+      top: 0em
+  }
+}
+
+@-webkit-keyframes charSlider {
+  from {
+      top: -4.5em;
+  }
+  to {
+      top: 0em
+  }
+}
+
+.grad_move(@time: 59s,@color: @darkest, @color2: #593763){
+  background: linear-gradient(270deg, @color, @color2);
+  background-size: 400% 400%;
+
+  -webkit-animation: gradMove @time ease infinite;
+  -moz-animation: gradMove @time ease infinite;
+  -o-animation: gradMove @time ease infinite;
+  animation: gradMove @time ease infinite;
+}
+
+// grad-move ends
 
 .size-full(@height: auto, @max-l: @size-tablete, @width: 100%) {
   width        : @width;
